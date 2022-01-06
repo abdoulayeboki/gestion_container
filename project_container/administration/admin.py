@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import Bien, Client, Container, Convoi, Pays,Article, TypeBien
 
-
+admin.site.site_header ="Clic magic administration"
 # Register your models here.
 class PaysAdmin(admin.ModelAdmin):
     list_display   = ('code_pays', 'nom_pays')
@@ -36,7 +36,7 @@ class ClientAdmin(admin.ModelAdmin):
 class ConvoiAdmin(admin.ModelAdmin):
     list_display   = ('code_convoi', 'date_depart','date_arrivee','pays_actuel','pays_arrive','pays_depart')
     search_fields  = ('code_convoi',)
-    list_filter    = ( 'pays_actuel','pays_arrive','pays_depart')
+    list_filter    = ( 'date_depart','pays_actuel','pays_arrive','pays_depart')
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Client,ClientAdmin)
 admin.site.register(Bien,BienAdmin)

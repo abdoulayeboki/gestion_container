@@ -10,6 +10,9 @@ class Pays(models.Model):
     
     def __str__(self) :
         return self.nom_pays
+    class Meta:
+        verbose_name='pays'
+        verbose_name_plural='pays'
 class Container(models.Model):
     code_container = models.CharField(max_length=25,unique=True)
     nom_container = models.CharField(max_length=100)
